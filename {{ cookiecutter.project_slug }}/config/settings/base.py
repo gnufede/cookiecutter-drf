@@ -170,7 +170,7 @@ class BaseConfiguration(Configuration):
     }
 
     # djoser
-    DJOSER = {"SERIALIZERS": {"user": "api.users.serializers.UserSerializer"}}
+    DJOSER = {"SERIALIZERS": {"user": "djoser.serializers.UserSerializer"}}
 
     # Django Rest Framework Social OAuth2
     # http://python-social-auth.readthedocs.io/en/latest/configuration/django.html#database
