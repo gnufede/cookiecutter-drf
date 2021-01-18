@@ -22,7 +22,7 @@ class BaseConfiguration(Configuration):
         "rest_framework_social_oauth2",
         "django_filters",
         "corsheaders",
-        "drf_yasg",
+        "drf_spectacular",
         "django_celery_beat",
     ]
     DJANGO_APPS = [
@@ -192,6 +192,7 @@ class BaseConfiguration(Configuration):
         "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
         "DEFAULT_VERSIONING_CLASS": "rest_framework.versioning.AcceptHeaderVersioning",
         "DEFAULT_VERSION": "1.0",
+        "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     }
 
     def __init__(self, *args, **kwargs):

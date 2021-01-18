@@ -22,12 +22,12 @@ djoser = "*"
 social-auth-app-django = "*"
 "django-rest-framework-social-oauth2" = "*"
 djangorestframework-jsonapi = "*"
-drf-yasg = {version = "*",extras = ["validation"]}
 django-redis = "*"
 lz4 = "*"
 sentry-sdk = "*"
 celery = "*"
 django-celery-beat = "*"
+drf-spectacular = "*"
 
 [dev-packages]
 "flake8" = "*"
@@ -43,7 +43,7 @@ pre-commit = "*"
 watchdog = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.9"
 
 [pipenv]
 allow_prereleases = true
