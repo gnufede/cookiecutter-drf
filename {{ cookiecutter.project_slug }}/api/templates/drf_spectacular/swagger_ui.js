@@ -1,4 +1,4 @@
-const swagger_settings  = {{settings|safe}}
+const swagger_settings  = "{{settings|safe}}"
 
 const ui = SwaggerUIBundle({
   url: "{{schema_url|safe}}",
