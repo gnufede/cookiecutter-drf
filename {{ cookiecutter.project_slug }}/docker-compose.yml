@@ -26,6 +26,8 @@ x-web-environment:
 services:
   postgres:
     image: postgres:alpine
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
 
   redis:
     image: redis:alpine

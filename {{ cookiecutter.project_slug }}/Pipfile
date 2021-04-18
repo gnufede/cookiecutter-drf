@@ -28,6 +28,7 @@ sentry-sdk = "*"
 celery = "*"
 django-celery-beat = "*"
 drf-spectacular = "*"
+argh = "*"
 
 [dev-packages]
 "flake8" = "*"

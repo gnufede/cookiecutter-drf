@@ -1,7 +1,10 @@
 from django.urls import path, re_path, include
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularRedocView,
+    SpectacularSwaggerView,
+)
 from rest_framework.routers import DefaultRouter
-
-from .schema import schema_view
 
 
 # Extend this router with your own routes
@@ -23,18 +26,17 @@ app_urls = [
 
 # Schema URL configuration
 schema_urls = [
-    # Swagger
-    re_path(
-        r"swagger(?P<format>\.json|\.yaml)$",
-        schema_view.without_ui(cache_timeout=0),
-        name="schema-json",
-    ),
+    path("schema/", SpectacularAPIView.as_view(), name="schema"),
     path(
-        "swagger/",
-        schema_view.with_ui("swagger", cache_timeout=0),
+        "schema/swagger-ui/",
+        SpectacularSwaggerView.as_view(url_name="api:schema"),
         name="schema-swagger-ui",
     ),
-    path("redoc/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
+    path(
+        "schema/redoc/",
+        SpectacularRedocView.as_view(url_name="api:schema"),
+        name="schema-redoc",
+    ),
 ]
 
 
